@@ -1,17 +1,8 @@
 const WrapperDiv = document.querySelector('.Wrapper');
-WrapperDiv.style.display = 'flex';
-WrapperDiv.style.flexDirection = 'row';
-WrapperDiv.style.flexWrap = 'wrap';
-WrapperDiv.style.width = '250px';
-WrapperDiv.style.height = '250px';
-
-
 
 function generateColor() {
     return '#' + Math.floor(Math.random()*16777215).toString(16)
 }
-
-
 
 document.body.onload = getOneBlock;
   function getOneBlock(backgroundColor) {
