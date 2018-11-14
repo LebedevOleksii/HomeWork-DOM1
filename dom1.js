@@ -1,4 +1,5 @@
 const WrapperDiv = document.querySelector('.Wrapper');
+const Button = document.querySelector('.button');
 
 function generateColor() {
   var x = Math.floor(Math.random() * 256);
@@ -7,7 +8,7 @@ function generateColor() {
   return "rgb(" + x + "," + y + "," + z + ")"
 }
 
-function getOneBlock(backgroundColor, i) {
+function getOneBlock(backgroundColor, n) {
   var div = document.createElement('div');
   div.style.display = 'flex';
   div.style.justifyContent = 'center';
@@ -18,15 +19,21 @@ function getOneBlock(backgroundColor, i) {
   div.style.backgroundColor = backgroundColor;
   div.style.border = '1.2px solid rgb(0, 0, 0)';
   div.style.boxShadow = '10px 10px 8px -7px rgba(0,0,0,0.75), 5px 5px 19px -5px #ffffff inset'
-  div.innerHTML = [i];
+  div.innerHTML = n;
   div.style.font = '13px Tahoma';
   WrapperDiv.appendChild(div);
 } 
 
-function squareCreate(number){
-  for(i=0;i<number; i++){
-    var color = generateColor()
-    getOneBlock(color, i);
-  }
+Button.addEventListener('click', function(){
+  recurs(1);
+});
+function recurs(n){
+  setTimeout(function() {
+    if(n<=25){
+      var color = generateColor();
+      getOneBlock(color, n)
+      recurs(n+1);
+    } 
+  },175);
 }
-squareCreate(25);
+  

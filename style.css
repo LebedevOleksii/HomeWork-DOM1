@@ -1,10 +1,10 @@
 .Wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 100px;
     margin-left: 500px;
+    padding: 55px;
     width: 300px;
-    height: 300px;
 }
